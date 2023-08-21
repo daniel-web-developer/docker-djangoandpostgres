@@ -226,7 +226,10 @@ django_dev_db=# \dt
     }
 ]
 ```
-7. Create a `entrypoint.sh` inside `example/exampleapp/`, the directory with `manage.py`. Add the following code inside it:
+The database is working, but that doesn't mean you'll be able to access http://localhost:8000 just yet. It was only after completing the following steps that it finally worked.
+
+7. Setting up an entrypoint:
+   1. Create a `entrypoint.sh` inside `example/exampleapp/`, the directory with `manage.py`. Add the following code inside it:
 ```
 #!/bin/sh
 
@@ -247,8 +250,8 @@ python manage.py migrate
 exec "$@"
 
 ```
-Afterwards, make it an executable by typing `chmod +x entrypoint.sh` (you need to be in the same directory as the file).
-8. Let's edit the `Dockerfile` (located in the same directory as `entrypoint.sh` and `manage.py`). We need to add lines so we can copy and work with `entrypoint.sh`, and then add one line to actually run the file. This is how the file will look like after the additions:
+   Afterwards, make it an executable by typing `chmod +x entrypoint.sh` (you need to be in the same directory as the file).
+   2. Let's edit the `Dockerfile` (located in the same directory as `entrypoint.sh` and `manage.py`). We need to add lines so we can copy and work with `entrypoint.sh`, and then add one line to actually run the file. This is how the file will look like after the additions:
 ```
 # using the official python image with Alpine Linux
 FROM python:3.10.12-alpine
@@ -280,9 +283,9 @@ COPY . .
 # run as soon as the container is started
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 ```
-By the way, you'll need `netcat` to run `entrypoint.sh`. Alpine already comes with it so that's why I'm not downloading it, but make sure your container's OS has it as well.
+   By the way, you'll need `netcat` to run `entrypoint.sh`. Alpine already comes with it so that's why I'm not downloading it, but make sure your container's OS has it as well.
 
-9. Bring everything down with `sudo docker compose down -v`, and then rebuild and run the containers with `sudo docker compose up -d --build`.
+8. Bring everything down with `sudo docker compose down -v`, and then rebuild and run the containers with `sudo docker compose up -d --build`.
 
 ## You should now see the default Django page if you visit http://localhost:8000! Congratulations!
 
