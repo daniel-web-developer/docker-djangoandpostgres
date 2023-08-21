@@ -66,10 +66,10 @@ example (this is the root folder of your project)
    ```
    services:
      web:
-       build: ./example # this needs to be your project's root folder
+       build: ./exampleapp # this needs to be django's main folder
        command: python manage.py runserver 0.0.0.0:8000
        volumes:
-         - ./blog/:/usr/src/app # project's root folder:WORKDIR defined in /example/exampleapp/Dockerfile
+         - ./exampleapp/:/usr/src/app # django's main folder:WORKDIR defined in /example/exampleapp/Dockerfile
        ports:
          - 8000:8000
        env_file:
