@@ -90,4 +90,4 @@ SECRET_KEY=secret
 DEBUG_STATUS=True
 ALLOWED_HOSTS=localhost
 ```
-8. You can now, in the project's root folder, type `docker compose build` to build the project's image (you might need to write `sudo` alongside with all the Docker related commands. In this case, it would be `sudo docker compose build`) and then `docker compose up -d` to run the container. After everything loaded, you can head to http://localhost:8000 to check if the container is working.
+8. You can now, in the project's root folder, type `docker compose build` to build the project's image (you might need to write `sudo` alongside with all the Docker related commands. In this case, it would be `sudo docker compose build`) and then `docker compose up -d` to run the container. After everything loaded, you can head to http://localhost:8000 to check if the container is working. **In order to stop the container(s), you can type `docker compose down -v`. The `-v` flag takes down any volumes that might be running (none so far, but we'll be adding some in the future)**.
