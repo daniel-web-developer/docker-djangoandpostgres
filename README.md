@@ -1,6 +1,6 @@
 # django-blog
 
-## How to set up Django with Docker (this works for any project, so feel free to use )
+## How to set up Django and Postgres with Docker
 
 ### Part 1: Creating the Django project.
 1. Create a new directory with `mkdir example`;
