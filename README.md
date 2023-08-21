@@ -284,7 +284,7 @@ By the way, you'll need `netcat` to run `entrypoint.sh`. Alpine already comes wi
 
 9. Bring everything down with `sudo docker compose down -v`, and then rebuild and run the containers with `sudo docker compose up -d --build`.
 
-##You should now see the default Django page if you visit http://localhost:8000! Congratulations!
+## You should now see the default Django page if you visit http://localhost:8000! Congratulations!
 
 I recommend everyone to only set up the production environment **only after finishing the project**.
 
