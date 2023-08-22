@@ -1,4 +1,4 @@
-# django-blog
+# Docker with Django and Postgres - Development environment
 
 ## How to set up Django and Postgres with Docker
 
