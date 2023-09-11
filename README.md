@@ -5,7 +5,7 @@
 ### Part 1: Creating the Django project.
 1. Create a new directory with `mkdir example`;
 2. Access such directory with `cd example`;
-3. Create a virtual environment. I'm using [venv](https://docs.python.org/3/library/venv.html) (the command is `python3 -m venv EXAMPLEENV`) in this app, now access it with `source example/bin/activate`. To leave the virtual environment, just type `deactivate EXAMPLEENV`;
+3. Create a virtual environment. I'm using [venv](https://docs.python.org/3/library/venv.html) (the command is `python3 -m venv EXAMPLEENV`) in this app, now access it with `source example/bin/activate`. To leave the virtual environment, just type `deactivate`;
 4. Install Django with `pip install django` and see which version it's installing. In my case, the version installed is Django 4.2.4. You'll need to know it to create a `requirements.txt` file for Docker;
 5. Create a Django project with `django-admin startproject exampleapp`. Access the `exampleapp` folder with `cd example app`, perform a database migration `python manage.py migrate` and start the local server `python manage.py runserver`. You can now use your browser and go to http://localhost:8000 and should see something like Image 1. **Warning: a different page may appear** (they might change according to the installed Django version), but that doesn't mean something went wrong. Check the [Django official documentation](https://docs.djangoproject.com/) if something doesn't feel right.
 
